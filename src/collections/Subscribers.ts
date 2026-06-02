@@ -7,7 +7,8 @@ export const Subscribers: CollectionConfig = {
     defaultColumns: ['email', 'name', 'subscribedAt'],
   },
   access: {
-    read: () => true,
+    read: ({ req: { user } }) => Boolean(user),
+    create: () => true,
   },
   fields: [
     {
