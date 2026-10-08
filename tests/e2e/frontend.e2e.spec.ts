@@ -1,20 +1,22 @@
-import { test, expect, Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
 
 test.describe('Frontend', () => {
-  let page: Page
-
-  test.beforeAll(async ({ browser }, testInfo) => {
-    const context = await browser.newContext()
-    page = await context.newPage()
-  })
-
-  test('can go on homepage', async ({ page }) => {
+  test('renders the homepage hero', async ({ page }) => {
     await page.goto('http://localhost:3000')
 
-    await expect(page).toHaveTitle(/Payload Blank Template/)
+    await expect(page).toHaveTitle(/Edgar Espinoza/)
 
-    const heading = page.locator('h1').first()
+    await expect(page.locator('h1').first()).toHaveText(
+      'Turning complexity into clarity through data, design, and code.',
+    )
 
-    await expect(heading).toHaveText('Welcome to your new project.')
+    await expect(page.getByRole('link', { name: 'Vizzuality' })).toHaveAttribute(
+      'href',
+      'https://vizzuality.com/',
+    )
+
+    for (const name of ['GitHub', 'LinkedIn', 'X']) {
+      await expect(page.getByRole('link', { name, exact: true })).toBeVisible()
+    }
   })
 })
