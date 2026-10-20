@@ -19,4 +19,19 @@ test.describe('Frontend', () => {
       await expect(page.getByRole('link', { name, exact: true })).toBeVisible()
     }
   })
+
+  test('renders selected work and footer', async ({ page }) => {
+    await page.goto('http://localhost:3000')
+
+    await expect(page.getByRole('heading', { level: 2, name: 'Selected work' })).toBeVisible()
+
+    for (const [name, href] of [
+      ['forestinnovationplatform.org', 'https://forestinnovationplatform.org/'],
+      ['forestryanalytics.org', 'https://forestryanalytics.org/'],
+    ]) {
+      await expect(page.getByRole('link', { name })).toHaveAttribute('href', href)
+    }
+
+    await expect(page.getByRole('contentinfo').getByText('Let’s connect.')).toBeVisible()
+  })
 })

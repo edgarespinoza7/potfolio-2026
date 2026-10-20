@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#0a1315;color:#e3ecea;-webkit-font-smoothing:antialiased}
+a{color:#e3ecea;text-decoration:none}
+a:hover{color:#ffffff}
+</style>
+</helmet>
+<main style="position:relative;min-height:100vh;overflow:hidden;background:radial-gradient(120% 90% at 72% 38%,#142326 0%,#0d181a 45%,#071012 100%);font-family:'Hanken Grotesk',Helvetica,sans-serif;display:flex;flex-direction:column">
+  <div style="position:absolute;inset:0;pointer-events:none;opacity:0.09;mix-blend-mode:screen;background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>&quot;);background-size:220px 220px"></div>
+  <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,19,21,0) 45%,rgba(10,19,21,0.85) 100%);pointer-events:none"></div>
+
+  <header style="position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;white-space:nowrap;gap:16px 24px;padding:32px clamp(24px,5vw,64px);font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#e3ecea">
+    <span>Edgar Espinoza</span>
+    <span>Front-end engineer</span>
+  </header>
+
+  <section style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(24px,5vw,64px) clamp(32px,6vh,64px);gap:clamp(32px,5vh,56px)">
+    <h1 style="margin:0;font-weight:500;letter-spacing:-0.035em;font-size:clamp(40px,7vw,120px);line-height:1;display:flex;flex-direction:column"><span style="color:#e3ecea">Connecting the dots.</span><span style="color:#8a9c9a">Advancing sustainability.</span></h1>
+
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+      <p style="margin:0;max-width:52ch;font-size:clamp(15px,1.3vw,18px);line-height:1.55;color:#a2b3b0;text-wrap:pretty">Front-end software engineer at <a href="https://vizzuality.com/" target="_blank" style="color:#e3ecea;text-decoration:underline;text-decoration-color:rgba(227,236,234,0.35);text-underline-offset:3px" style-hover="text-decoration-color:#e3ecea">Vizzuality</a>. I build <span style="color:#e3ecea">interactive data visualizations</span>, <span style="color:#e3ecea">data stories</span>, <span style="color:#e3ecea">web GIS platforms</span>, and <span style="color:#e3ecea">high-performance apps</span> that transform complexity into clarity.</p>
+    </div>
+  </section>
+</main>
+<section id="work" style="background:#0a1315;font-family:'Hanken Grotesk',Helvetica,sans-serif;padding:clamp(64px,10vh,120px) clamp(24px,5vw,64px) clamp(48px,8vh,96px);display:flex;flex-direction:column;gap:32px">
+  <h2 style="margin:0;font-family:'Geist Mono',monospace;font-weight:400;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#e3ecea">Selected work</h2>
+  <div style="display:flex;flex-direction:column;border-bottom:1px solid rgba(227,236,234,0.12)">
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="2">
+      <dc-import name="WorkCard" index="{{ p.index }}" title="{{ p.title }}" url="{{ p.url }}" domain="{{ p.domain }}" thumb-id="{{ p.thumbId }}" hint-size="100%,480px"></dc-import>
+    </sc-for>
+  </div>
+</section>
+<footer style="background:#0a1315;font-family:'Hanken Grotesk',Helvetica,sans-serif;padding:clamp(48px,8vh,80px) clamp(24px,5vw,64px) 40px;display:flex;flex-direction:column;gap:clamp(40px,6vh,64px)">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px">
+    <p style="margin:0;font-weight:500;font-size:clamp(28px,3.4vw,52px);line-height:1.05;letter-spacing:-0.03em;color:#e3ecea">Let’s connect.</p>
+    <nav style="display:flex;gap:12px">
+      <a href="https://github.com/" target="_blank" aria-label="GitHub" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(227,236,234,0.18);border-radius:50%;color:#e3ecea;transition:background .2s,color .2s" style-hover="background:#e3ecea;color:#0a1315">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.070 3.633 17.700 3.633 17.700c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.070 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.930 0-1.310.465-2.380 1.235-3.220-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.300 1.230.96-.267 1.980-.399 3-.405 1.020.006 2.040.138 3 .405 2.280-1.552 3.285-1.230 3.285-1.230.645 1.653.24 2.873.12 3.176.765.84 1.230 1.910 1.230 3.220 0 4.610-2.805 5.625-5.475 5.920.42.36.81 1.096.81 2.220 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(227,236,234,0.18);border-radius:50%;color:#e3ecea;transition:background .2s,color .2s" style-hover="background:#e3ecea;color:#0a1315">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"></path></svg>
+      </a>
+      <a href="https://x.com/" target="_blank" aria-label="X" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(227,236,234,0.18);border-radius:50%;color:#e3ecea;transition:background .2s,color .2s" style-hover="background:#e3ecea;color:#0a1315">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg>
+      </a>
+    </nav>
+  </div>
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:24px;border-top:1px solid rgba(227,236,234,0.12);font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#8a9c9a">
+    <span>© 2026 Edgar Espinoza</span>
+    <span>Front-end engineer</span>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;animate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Visual&quot;},&quot;depth&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:5,&quot;min&quot;:3,&quot;max&quot;:6,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Visual&quot;}}">
+class Component extends DCLogic {
+  canvasRef = React.createRef();
+  componentDidMount() {
+    this.t = 0;
+    this.onResize = () => this.resize();
+    window.addEventListener('resize', this.onResize);
+    this.resize();
+    const loop = () => {
+      const anim = (this.props.animate ?? true) && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (anim) this.t += 0.004;
+      this.draw();
+      this.raf = requestAnimationFrame(loop);
+    };
+    loop();
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    window.removeEventListener('resize', this.onResize);
+  }
+  resize() {
+    const c = this.canvasRef.current; if (!c) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const r = c.getBoundingClientRect();
+    c.width = r.width * dpr; c.height = r.height * dpr;
+    this.dpr = dpr; this.W = r.width; this.H = r.height;
+  }
+  tree() {
+    const D = this.props.depth ?? 5;
+    if (this._tree && this._tree.D === D) return this._tree;
+    let seed = 23; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    const nodes = [];
+    const add = (x, y, parent, kind, depth) => {
+      const n = { i: nodes.length, x, y, parent, kind, depth, kids: [], bend: (rnd() - 0.5) * 0.35, p: rnd() * 6.283 };
+      nodes.push(n); if (parent >= 0) nodes[parent].kids.push(n.i); return n;
+    };
+    const ground = add(0, 0, -1, 'axis', 0);
+    const t1 = add((rnd() - 0.5) * 0.03, -0.12, ground.i, 'trunk', 0);
+    const t2 = add((rnd() - 0.5) * 0.04, -0.23, t1.i, 'trunk', 0);
+    const t3 = add((rnd() - 0.5) * 0.03, -0.33, t2.i, 'trunk', 0);
+    const crown = (from, ang, len, d) => {
+      const n = add(from.x + Math.cos(ang) * len, from.y + Math.sin(ang) * len, from.i, 'crown', d);
+      if (d >= D) return;
+      const k = rnd() < 0.25 ? 3 : 2;
+      for (let c = 0; c < k; c++) {
+        const spread = 0.32 + rnd() * 0.3;
+        let a = ang + (k === 2 ? (c ? 1 : -1) * spread : (c - 1) * spread) + (rnd() - 0.5) * 0.25;
+        a += (-Math.PI / 2 - a) * 0.08;
+        crown(n, a, len * (0.7 + rnd() * 0.14), d + 1);
+      }
+    };
+    [-0.62, 0.02, 0.6].forEach(o => crown(t3, -Math.PI / 2 + o + (rnd() - 0.5) * 0.15, 0.19, 1));
+    crown(t2, -Math.PI / 2 - 1.05, 0.13, 2); crown(t2, -Math.PI / 2 + 1.0, 0.13, 2);
+    const root = (from, ang, len, d) => {
+      const n = add(from.x + Math.cos(ang) * len, from.y + Math.sin(ang) * len, from.i, 'root', d);
+      if (d >= 3) return;
+      for (let c = 0; c < 2; c++) {
+        let a = ang + (c ? 1 : -1) * (0.3 + rnd() * 0.35);
+        a += (a > Math.PI / 2 ? 0.12 : -0.12);
+        root(n, a, len * (0.68 + rnd() * 0.15), d + 1);
+      }
+    };
+    [-1.2, -0.6, 0, 0.6, 1.2].forEach(o => root(ground, Math.PI / 2 + o + (rnd() - 0.5) * 0.2, 0.09 + rnd() * 0.03, 1));
+    nodes.filter(n => n.kind === 'crown' && !n.kids.length).forEach(tip => {
+      const m = 1 + (rnd() < 0.5 ? 1 : 0);
+      for (let q = 0; q < m; q++) { const a = rnd() * 6.283, r = 0.02 + rnd() * 0.05; add(tip.x + Math.cos(a) * r, tip.y + Math.sin(a) * r, -1, 'leaf', D + 1); }
+    });
+    nodes.forEach(n => { n.sw = n.kind === 'axis' ? 0 : n.kind === 'trunk' ? 0.4 : n.kind === 'crown' ? 1 + n.depth * 1.3 : n.kind === 'root' ? 0.8 + n.depth * 0.6 : 9; });
+    let bx0 = 1e9, bx1 = -1e9, by0 = 1e9, by1 = -1e9;
+    nodes.forEach(n => { bx0 = Math.min(bx0, n.x); bx1 = Math.max(bx1, n.x); by0 = Math.min(by0, n.y); by1 = Math.max(by1, n.y); });
+    this._tree = { D, nodes, box: [bx0, bx1, by0, by1] };
+    this.glow = new Float32Array(nodes.length); this.sig = []; this.nextFire = performance.now() / 1000 + 0.8;
+    return this._tree;
+  }
+  fire(i) {
+    this.glow[i] = 1;
+    const nodes = this._tree.nodes, n = nodes[i];
+    if (!n.kids.length) {
+      if (n.kind === 'crown' && this._pts) {
+        const a = this._pts[i];
+        nodes.forEach((m, j) => { if (m.kind === 'leaf') { const b = this._pts[j]; if (Math.hypot(a.x - b.x, a.y - b.y) < this._maxD * 1.3) this.glow[j] = Math.max(this.glow[j], 0.75); } });
+      }
+      return;
+    }
+    const pick = n.kids.slice().sort(() => Math.random() - 0.5);
+    this.sig.push({ n: pick[0], p: 0 });
+    if (pick[1] !== undefined && Math.random() < (n.kind === 'axis' ? 0.6 : 0.3)) this.sig.push({ n: pick[1], p: 0 });
+  }
+  draw() {
+    const c = this.canvasRef.current; if (!c || !this.W) return;
+    const ctx = c.getContext('2d'), W = this.W, H = this.H, t = this.t;
+    const anim = (this.props.animate ?? true) && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const now = performance.now() / 1000, dt = Math.min(0.05, now - (this._last || now)); this._last = now;
+    ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    const { nodes, box } = this.tree();
+    const small = W < 760;
+    const X0 = small ? W * 0.05 : W * 0.48, X1 = small ? W * 0.95 : W * 0.96, Y0 = 96, Y1 = small ? H * 0.62 : H * 0.9;
+    const sc = Math.min((X1 - X0) / (box[1] - box[0]), (Y1 - Y0) / (box[3] - box[2]));
+    const ox = (X0 + X1) / 2 - (box[0] + box[1]) / 2 * sc, oy = (Y0 + Y1) / 2 - (box[2] + box[3]) / 2 * sc;
+    const pts = nodes.map(n => ({ x: ox + n.x * sc + Math.sin(t * 0.9 + n.p) * n.sw, y: oy + n.y * sc + Math.cos(t * 0.7 + n.p) * n.sw * 0.7 }));
+    const maxD = sc * 0.075;
+    this._pts = pts; this._maxD = maxD;
+    const curve = n => {
+      const A = pts[n.parent], B = pts[n.i], dx = B.x - A.x, dy = B.y - A.y;
+      const C = { x: (A.x + B.x) / 2 - dy * n.bend, y: (A.y + B.y) / 2 + dx * n.bend };
+      return u => ({ x: (1 - u) * (1 - u) * A.x + 2 * (1 - u) * u * C.x + u * u * B.x, y: (1 - u) * (1 - u) * A.y + 2 * (1 - u) * u * C.y + u * u * B.y });
+    };
+    const path = (n, upto) => {
+      const q = curve(n), steps = 14, end = upto ?? 1; let pt = q(0);
+      ctx.beginPath(); ctx.moveTo(pt.x, pt.y);
+      for (let k = 1; k <= steps; k++) { pt = q(end * k / steps); ctx.lineTo(pt.x, pt.y); }
+      return pt;
+    };
+    if (anim) {
+      if (now > this.nextFire) { this.fire(0); this.nextFire = now + 3.5 + Math.random() * 3; }
+      const speed = sc * 0.1;
+      for (const s of this.sig) { const A = pts[nodes[s.n].parent], B = pts[s.n]; s.p += dt * speed / Math.max(8, Math.hypot(B.x - A.x, B.y - A.y)); }
+      const done = this.sig.filter(s => s.p >= 1); this.sig = this.sig.filter(s => s.p < 1);
+      done.forEach(s => this.fire(s.n));
+      for (let i = 0; i < this.glow.length; i++) this.glow[i] = Math.max(0, this.glow[i] - dt * 0.3);
+    }
+    const g = this.glow;
+    ctx.lineWidth = 0.6;
+    for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+      const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y; if (Math.abs(dx) > maxD || Math.abs(dy) > maxD) continue;
+      const d = Math.hypot(dx, dy); if (d >= maxD) continue;
+      const k = 1 - d / maxD, lit = Math.min(g[i], g[j]);
+      ctx.strokeStyle = `rgba(227,236,234,${0.12 * k})`;
+      ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke();
+      if (lit > 0.02) { ctx.strokeStyle = `rgba(140,203,184,${0.4 * lit * k})`; ctx.stroke(); }
+    }
+    for (const n of nodes) {
+      if (n.parent < 0) continue;
+      const w = n.kind === 'trunk' ? 2 : n.kind === 'crown' ? Math.max(0.6, 1.7 - n.depth * 0.22) : Math.max(0.6, 1.5 - n.depth * 0.3);
+      ctx.lineWidth = w; ctx.strokeStyle = 'rgba(227,236,234,0.2)'; path(n); ctx.stroke();
+      if (g[n.i] > 0.02) { ctx.strokeStyle = `rgba(140,203,184,${0.55 * g[n.i]})`; ctx.stroke(); }
+    }
+    ctx.lineWidth = 1.2;
+    for (const s of this.sig) {
+      const e = s.p * s.p * (3 - 2 * s.p);
+      ctx.strokeStyle = 'rgba(160,215,198,0.6)';
+      const pt = path(nodes[s.n], e); ctx.stroke();
+      ctx.fillStyle = 'rgba(200,240,228,0.9)';
+      ctx.beginPath(); ctx.arc(pt.x, pt.y, 1.5, 0, 6.283); ctx.fill();
+    }
+    for (const n of nodes) {
+      const { x, y } = pts[n.i], gl = g[n.i], tip = !n.kids.length && n.kind !== 'leaf';
+      const base = n.kind === 'axis' ? 2.6 : n.kind === 'leaf' ? 1.2 : tip ? 1.6 : 1;
+      if (gl > 0.01) {
+        const Rg = base + 12 * gl, rg = ctx.createRadialGradient(x, y, 0, x, y, Rg);
+        rg.addColorStop(0, `rgba(140,203,184,${0.35 * gl})`); rg.addColorStop(1, 'rgba(140,203,184,0)');
+        ctx.fillStyle = rg; ctx.beginPath(); ctx.arc(x, y, Rg, 0, 6.283); ctx.fill();
+      }
+      ctx.fillStyle = gl > 0.01 ? `rgba(${140 + 60 * gl},${203 + 37 * gl},${184 + 44 * gl},${0.8 + 0.2 * gl})` : (n.kind === 'leaf' ? 'rgba(140,203,184,0.55)' : tip || n.kind === 'axis' ? 'rgba(140,203,184,0.75)' : 'rgba(227,236,234,0.35)');
+      ctx.beginPath(); ctx.arc(x, y, base * (1 + 0.5 * gl), 0, 6.283); ctx.fill();
+    }
+  }
+  renderVals() {
+    return {
+      canvasRef: this.canvasRef,
+      projects: [
+        { index: '01', title: 'Forest Innovation Platform', domain: 'forestinnovationplatform.org', thumbId: 'work-fip', url: 'https://forestinnovationplatform.org/assessment-tool?layers={%22id%22:%2287953832-5871-4cb6-9955-02383ca0103c%22%252C%22visibility%22:true%252C%22opacity%22:1},{%22id%22:%22cd77f101-00f8-442d-ad57-0448e82a8cb2%22%252C%22visibility%22:true%252C%22opacity%22:1}' },
+        { index: '02', title: 'Forest Analytics for Carbon Tracking (FACT)', domain: 'forestryanalytics.org', thumbId: 'work-forestry-analytics', url: 'https://forestryanalytics.org/' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

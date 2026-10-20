@@ -8,13 +8,27 @@
   --color-muted: #8a9c9a;
   --color-body: #a2b3b0;
   --color-rule: rgba(227, 236, 234, 0.12);
+  --color-surface: #0d181a;
 
   --spacing-gutter: clamp(24px, 5vw, 64px);
+
+  /* Gentle up-down nudge for the scroll cue (animate-nudge). */
+  --animate-nudge: nudge 2.4s ease-in-out infinite;
+
+  @keyframes nudge {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
 }
 
 /* next/font exposes the loaded families as CSS variables on <html>. */
 @theme inline {
-  --font-sans: var(--font-geist), Helvetica, sans-serif;
+  --font-sans: var(--font-hanken), Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
 }
 
@@ -24,12 +38,16 @@
     @apply bg-bg text-fg antialiased;
   }
 
+  html {
+    @apply motion-safe:scroll-smooth;
+  }
+
   a {
     @apply text-fg hover:text-fg-strong;
   }
 }
 
-/* Hero backdrop: radial glow behind the network graph. */
+/* Hero backdrop: radial glow behind the tree graph. */
 @utility bg-hero {
   background: radial-gradient(120% 90% at 72% 38%, #142326 0%, #0d181a 45%, #071012 100%);
 }

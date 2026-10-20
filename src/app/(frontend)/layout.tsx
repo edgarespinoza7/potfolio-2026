@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist_Mono, Hanken_Grotesk } from 'next/font/google'
 import React from 'react'
+
+import { Footer } from '@/components/Footer/Footer'
+
 import './styles.css'
 
-const geist = Geist({
+const hanken = Hanken_Grotesk({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
-  variable: '--font-geist',
+  variable: '--font-hanken',
 })
 
 const geistMono = Geist_Mono({
@@ -25,9 +28,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${hanken.variable} ${geistMono.variable}`}>
       <body>
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )
