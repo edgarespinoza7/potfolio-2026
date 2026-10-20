@@ -7,7 +7,7 @@ test.describe('Frontend', () => {
     await expect(page).toHaveTitle(/Edgar Espinoza/)
 
     await expect(page.locator('h1').first()).toHaveText(
-      'Connecting the dots. Advancing sustainability.',
+      'Connecting the dots. Visualizing complexity.',
     )
 
     await expect(page.getByRole('link', { name: 'Vizzuality' })).toHaveAttribute(
@@ -26,8 +26,8 @@ test.describe('Frontend', () => {
     await expect(page.getByRole('heading', { level: 2, name: 'Selected work' })).toBeVisible()
 
     for (const [name, href] of [
-      ['forestinnovationplatform.org', 'https://forestinnovationplatform.org/'],
-      ['forestryanalytics.org', 'https://forestryanalytics.org/'],
+      ['Visit Forest Innovation Platform', 'https://forestinnovationplatform.org/'],
+      ['Visit Forest Analytics for Carbon Tracking (FACT)', 'https://forestryanalytics.org/'],
     ]) {
       await expect(page.getByRole('link', { name })).toHaveAttribute('href', href)
     }

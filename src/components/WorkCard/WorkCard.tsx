@@ -7,11 +7,10 @@ type WorkCardProps = {
   index: string
   title: string
   link: string
-  domain: string
   image?: ProjectImage
 }
 
-export function WorkCard({ index, title, link, domain, image }: WorkCardProps) {
+export function WorkCard({ index, title, link, image }: WorkCardProps) {
   return (
     <article className="flex flex-wrap gap-x-12 gap-y-6 border-t border-rule py-10 text-fg">
       <div className="flex min-w-0 flex-[1_1_260px] flex-col gap-4">
@@ -56,10 +55,11 @@ export function WorkCard({ index, title, link, domain, image }: WorkCardProps) {
           <a
             className="pointer-events-auto flex translate-y-1 items-center gap-2.5 rounded-full border border-fg/18 bg-bg/85 px-[18px] py-3 font-mono text-[12px] tracking-[0.06em] text-fg uppercase opacity-0 transition-[opacity,translate,background-color,color] duration-600 ease-[cubic-bezier(.2,.7,.2,1)] group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-fg hover:text-bg focus-visible:bg-fg focus-visible:text-bg motion-reduce:translate-y-0 motion-reduce:transition-none [@media(hover:none)]:translate-y-0 [@media(hover:none)]:opacity-100"
             href={link}
+            aria-label={`Visit ${title} (opens in a new tab)`}
             rel="noopener noreferrer"
             target="_blank"
           >
-            {domain} <span aria-hidden="true">↗</span>
+            Visit site <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>

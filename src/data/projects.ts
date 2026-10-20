@@ -36,8 +36,3 @@ export const PROJECTS: Project[] = [
     },
   },
 ]
-
-/** "https://www.example.org/path" → "example.org" */
-export function getDomain(link: string): string {
-  return new URL(link).hostname.replace(/^www\./, '')
-}

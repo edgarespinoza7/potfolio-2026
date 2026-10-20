@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { WorkCard } from '@/components/WorkCard/WorkCard'
-import { getDomain, PROJECTS } from '@/data/projects'
+import { PROJECTS } from '@/data/projects'
 
 export function SelectedWork() {
   return (
@@ -20,7 +20,6 @@ export function SelectedWork() {
             index={String(i + 1).padStart(2, '0')}
             title={project.title}
             link={project.link}
-            domain={getDomain(project.link)}
             image={project.image}
           />
         ))}

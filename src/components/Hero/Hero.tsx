@@ -25,7 +25,7 @@ export function Hero() {
         <h1 className="text-[clamp(40px,7vw,120px)] leading-none lg:text-[clamp(40px,4vw,96px)] font-medium tracking-[-0.035em]">
           {/* One sentence per line; each wraps (balanced) only on narrow screens. */}
           <span className="block text-balance">Connecting the dots.</span>{' '}
-          <span className="block text-balance text-muted">Advancing sustainability.</span>
+          <span className="block text-balance text-muted">Visualizing complexity.</span>
         </h1>
 
         <p className="max-w-[52ch] text-[clamp(15px,1.3vw,18px)] leading-[1.55] text-pretty text-body">
@@ -40,9 +40,9 @@ export function Hero() {
           </a>
           . I build <span className="text-fg">interactive data visualizations</span>,{' '}
           <span className="text-fg">data stories</span>,{' '}
-          <span className="text-fg">web GIS platforms</span>, and{' '}
-          <span className="text-fg">high-performance apps</span> that transform complexity
-          into clarity.
+           and{' '}
+          <span className="text-fg">high-performance web apps</span> that help people explore,
+          understand, and take action.
         </p>
       </section>
 
