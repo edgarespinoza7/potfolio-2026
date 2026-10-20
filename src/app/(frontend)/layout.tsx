@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Edgar Espinoza — Front-end Engineer',
   description:
-    'Front-end engineer at Vizzuality specializing in data visualization: interactive data stories, data apps and Web GIS platforms for climate, nature and society.',
+    'Front-end engineer at Vizzuality specializing in data visualization. I build interactive data stories, Web GIS platforms, and high-performance web apps that transform complexity into clarity.',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {

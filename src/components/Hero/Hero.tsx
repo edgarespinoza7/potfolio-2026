@@ -42,10 +42,11 @@ export function Hero() {
             >
               Vizzuality
             </a>
-            . I build <span className={styles.highlight}>interactive data stories</span>,{' '}
-            <span className={styles.highlight}>data apps</span> and{' '}
-            <span className={styles.highlight}>Web GIS platforms</span> for climate, nature and
-            society.
+            . I build <span className={styles.highlight}>interactive data visualizations</span>,{' '}
+            <span className={styles.highlight}>data stories</span>,{' '}
+            <span className={styles.highlight}>Web GIS platforms</span>, and{' '}
+            <span className={styles.highlight}>high-performance web apps</span> that transform
+            complexity into clarity.
           </p>
 
           <nav className={styles.social} aria-label="Social links">
