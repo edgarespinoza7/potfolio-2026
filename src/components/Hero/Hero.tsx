@@ -44,7 +44,7 @@ export function Hero() {
             </a>
             . I build <span className={styles.highlight}>interactive data-driven stories</span>,{' '}
             <span className={styles.highlight}>data apps</span> and{' '}
-            <span className={styles.highlight}>WebGIS platforms</span> for climate, nature and
+            <span className={styles.highlight}>Web GIS platforms</span> for climate, nature and
             society.
           </p>
 
