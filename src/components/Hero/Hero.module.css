@@ -33,10 +33,10 @@
 
 .meta {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 16px 24px;
+  gap: 24px;
   padding: 32px var(--gutter);
   white-space: nowrap;
   font-family: var(--font-mono), monospace;
@@ -48,10 +48,6 @@
 
 .name {
   color: var(--fg);
-}
-
-.focus {
-  justify-self: end;
 }
 
 .body {
@@ -69,8 +65,16 @@
   font-size: clamp(36px, 5.4vw, 88px);
   line-height: 1;
   letter-spacing: -0.04em;
-  max-width: 16ch;
+}
+
+/* One sentence per line; each wraps (balanced) only on narrow screens. */
+.headlineLine {
+  display: block;
   text-wrap: balance;
+}
+
+.headlineMuted {
+  color: var(--muted);
 }
 
 .footer {
@@ -89,6 +93,10 @@
   line-height: 1.55;
   color: var(--body);
   text-wrap: pretty;
+}
+
+.highlight {
+  color: var(--fg);
 }
 
 .inlineLink {
@@ -128,12 +136,3 @@
   color: var(--bg);
 }
 
-@media (max-width: 720px) {
-  .meta {
-    grid-template-columns: 1fr auto;
-  }
-
-  .role {
-    display: none;
-  }
-}

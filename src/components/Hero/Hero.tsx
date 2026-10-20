@@ -20,13 +20,15 @@ export function Hero() {
 
       <header className={styles.meta}>
         <span className={styles.name}>Edgar Espinoza</span>
-        <span className={styles.role}>Front-end engineer</span>
-        <span className={styles.focus}>Data visualization · Web apps</span>
+        <span>Front-end engineer</span>
       </header>
 
       <section className={styles.body}>
         <h1 className={styles.headline}>
-          Turning complexity into clarity through data, design, and code.
+          <span className={styles.headlineLine}>Connecting the dots.</span>{' '}
+          <span className={`${styles.headlineLine} ${styles.headlineMuted}`}>
+            Advancing sustainability.
+          </span>
         </h1>
 
         <div className={styles.footer}>
@@ -40,7 +42,10 @@ export function Hero() {
             >
               Vizzuality
             </a>
-            , building interactive data visualizations and high-performance web apps that transform complex data into clear, intuitive experiences.
+            . I build <span className={styles.highlight}>interactive data-driven stories</span>,{' '}
+            <span className={styles.highlight}>data apps</span> and{' '}
+            <span className={styles.highlight}>WebGIS platforms</span> for climate, nature and
+            society.
           </p>
 
           <nav className={styles.social} aria-label="Social links">

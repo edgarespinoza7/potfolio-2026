@@ -7,7 +7,7 @@ test.describe('Frontend', () => {
     await expect(page).toHaveTitle(/Edgar Espinoza/)
 
     await expect(page.locator('h1').first()).toHaveText(
-      'Turning complexity into clarity through data, design, and code.',
+      'Connecting the dots. Advancing sustainability.',
     )
 
     await expect(page.getByRole('link', { name: 'Vizzuality' })).toHaveAttribute(
