@@ -6,13 +6,13 @@ import './styles.css'
 const geist = Geist({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
-  variable: '--font-sans',
+  variable: '--font-geist',
 })
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
   weight: '400',
-  variable: '--font-mono',
+  variable: '--font-geist-mono',
 })
 
 export const metadata: Metadata = {
