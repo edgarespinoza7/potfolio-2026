@@ -19,7 +19,7 @@ export function Hero() {
       <div className={styles.fade} aria-hidden="true" />
 
       <header className={styles.meta}>
-        <span className={styles.name}>Edgar Espinoza</span>
+        <span>Edgar Espinoza</span>
         <span>Front-end engineer</span>
       </header>
 
@@ -42,7 +42,7 @@ export function Hero() {
             >
               Vizzuality
             </a>
-            . I build <span className={styles.highlight}>interactive data-driven stories</span>,{' '}
+            . I build <span className={styles.highlight}>interactive data stories</span>,{' '}
             <span className={styles.highlight}>data apps</span> and{' '}
             <span className={styles.highlight}>Web GIS platforms</span> for climate, nature and
             society.

@@ -59,7 +59,7 @@ export function NetworkGraph({ className, nodeCount = 70, animate = true }: Netw
         for (let j = i + 1; j < pts.length; j++) {
           const d = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y)
           if (d < maxD) {
-            ctx.strokeStyle = `rgba(237,237,235,${0.2 * (1 - d / maxD)})`
+            ctx.strokeStyle = `rgba(227,236,234,${0.2 * (1 - d / maxD)})`
             ctx.beginPath()
             ctx.moveTo(pts[i].x, pts[i].y)
             ctx.lineTo(pts[j].x, pts[j].y)
@@ -68,7 +68,7 @@ export function NetworkGraph({ className, nodeCount = 70, animate = true }: Netw
         }
       }
 
-      ctx.fillStyle = 'rgba(237,237,235,0.6)'
+      ctx.fillStyle = 'rgba(140,203,184,0.75)'
       for (const p of pts) {
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
