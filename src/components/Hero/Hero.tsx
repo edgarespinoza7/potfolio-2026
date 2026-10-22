@@ -18,7 +18,7 @@ export function Hero() {
 
       <header className="relative flex flex-wrap items-center justify-between gap-x-6 gap-y-4 px-gutter py-8 font-mono text-[12px] tracking-[0.06em] whitespace-nowrap text-fg uppercase">
         <span>Edgar Espinoza</span>
-        <span>Front-end engineer</span>
+        <span>Full-stack engineer</span>
       </header>
 
       <section className="relative flex flex-1 flex-col justify-end gap-[clamp(32px,5vh,56px)] px-gutter pb-[clamp(32px,6vh,64px)] lg:pb-[clamp(104px,15vh,160px)]">
@@ -29,7 +29,7 @@ export function Hero() {
         </h1>
 
         <p className="max-w-[52ch] text-[clamp(15px,1.3vw,18px)] leading-[1.55] text-pretty text-body">
-          Front-end software engineer at{' '}
+          Full-stack software engineer at{' '}
           <a
             className="text-fg underline decoration-fg/35 underline-offset-3 transition-[text-decoration-color] duration-200 hover:decoration-fg"
             href="https://vizzuality.com/"
@@ -38,11 +38,11 @@ export function Hero() {
           >
             Vizzuality
           </a>
-          . I build <span className="text-fg">interactive data visualizations</span>,{' '}
-          <span className="text-fg">data stories</span>,{' '}
-           and{' '}
-          <span className="text-fg">high-performance web apps</span> that help people explore,
-          understand, and take action.
+          <br/>
+          I build <span className="text-fg">high-performance web apps</span> and{' '}
+          <span className="text-fg">interactive data stories</span>, from the back-end
+          infrastructure to the front-end experiences that help people{' '}
+          <span className="text-fg">explore, understand, and act</span> on complex datasets.
         </p>
       </section>
 
