@@ -14,7 +14,7 @@ export function Footer() {
 
       <div className="flex flex-wrap justify-between gap-4 border-t border-rule pt-6 font-mono text-[12px] tracking-[0.06em] text-muted uppercase">
         <span>© {new Date().getFullYear()} Edgar Espinoza</span>
-        <span>Front-end engineer</span>
+        <span>Full-stack engineer</span>
       </div>
     </footer>
   )
