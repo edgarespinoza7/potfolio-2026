@@ -40,8 +40,7 @@ export function Hero() {
           </a>
           <br/>
           I build <span className="text-fg">high-performance web apps</span> and{' '}
-          <span className="text-fg">interactive data stories</span>, from the back-end
-          infrastructure to the front-end experiences that help people{' '}
+          <span className="text-fg">interactive data stories</span> that help people{' '}
           <span className="text-fg">explore, understand, and act</span> on complex datasets.
         </p>
       </section>
